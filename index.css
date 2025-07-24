@@ -1,0 +1,206 @@
+/* --- CSS Variables & Basic Setup --- */
+:root {
+    --bg-dark: #111319; /* Darker background */
+    --bg-secondary: #22252e; /* Darker secondary background */
+    --text-white: #ededed;
+    --text-secondary: #ccc;
+    --accent-orange: #f9a826;
+    --font-family: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    line-height: 1.6;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.section-title span {
+    color: var(--accent-orange);
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 4rem;
+}
+
+.page-section {
+    padding: 6rem 5% 4rem;
+    min-height: 90vh;
+    margin-top: 30px;
+}
+
+/* --- Header & Navbar --- */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.2rem 5%;
+    background-color: rgba(17, 19, 25, 0.85);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    border-bottom: 1px solid var(--bg-secondary);
+}
+.highlight{
+  color:orangered;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    width:100px;
+    height:68px;
+    object-fit: contain;
+}
+
+.logo .highlight {
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    font-weight: 500;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--accent-orange);
+}
+
+.menu-icon {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+.portfolio-card{
+    height:20vh;
+    background-size:cover;
+}
+
+/* --- Home Section (Hero) --- */
+#home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+}
+
+.hero-left { flex: 1.2; }
+.hero-left h1 { font-size: 3.5rem; font-weight: 700; line-height: 1.2; margin-bottom: 0.5rem; }
+.hero-left h2 { font-size: 2rem; font-weight: 600; color: var(--accent-orange); margin-bottom: 1.5rem; }
+.hero-left p { font-size: 1.1rem; max-width: 550px; margin-bottom: 2.5rem; color: var(--text-secondary); }
+.social-icons { display: flex; gap: 1rem; margin-bottom: 2.5rem; }
+.social-icons a { display: inline-flex; justify-content: center; align-items: center; width: 40px; height: 40px; border: 2px solid var(--accent-orange); border-radius: 50%; font-size: 1.2rem; color: var(--accent-orange); transition: all 0.3s ease; }
+.social-icons a:hover { background-color: var(--accent-orange); color: var(--bg-dark); box-shadow: 0 0 15px var(--accent-orange); }
+.hero-buttons { display: flex; gap: 1rem; }
+.btn { display: inline-block; padding: 0.8rem 2rem; border-radius: 8px; font-weight: 600; font-size: 1rem; transition: all 0.3s ease; cursor: pointer; border: 2px solid transparent; letter-spacing: 0.5px; }
+.btn-primary { background-color: var(--accent-orange); color: #111; box-shadow: 0 4px 15px rgba(249, 168, 38, 0.3); }
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(249, 168, 38, 0.5); }
+.btn-secondary { background-color: transparent; border: 2px solid var(--accent-orange); color: var(--accent-orange); }
+.btn-secondary:hover { background-color: var(--accent-orange); color: #111; }
+.hero-right { flex: 1; display: flex; justify-content: center; align-items: center; }
+.hero-image-container { position: relative; width: 350px; height: 350px; }
+.hero-image-container::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 50%; border: 5px solid var(--accent-orange); animation: spin 10s linear infinite; }
+.hero-right img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; padding: 10px; }
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+/* --- Services Section --- */
+.services-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; }
+.service-card { background-color: var(--bg-secondary); padding: 2rem; border-radius: 12px; text-align: center; border-bottom: 4px solid transparent; transition: all 0.3s ease; }
+.service-card:hover { transform: translateY(-10px); border-bottom-color: var(--accent-orange); }
+.service-card i { font-size: 3.5rem; color: var(--accent-orange); margin-bottom: 1.5rem; }
+.service-card h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+.service-card p { color: var(--text-secondary); }
+
+/* --- About Me Section --- */
+.about-container { display: flex; align-items: center; gap: 4rem; }
+.about-image { flex: 1; text-align: center; }
+.about-image img { width: 350px; height: 350px; border-radius: 12px; object-fit: cover; border: 3px solid var(--bg-secondary); }
+.about-content { flex: 1.5; }
+.about-content h3 { font-size: 2rem; font-weight: 600; margin-bottom: 1rem; }
+.about-content p { color: var(--text-secondary); margin-bottom: 1.5rem; }
+
+/* --- Portfolio Section --- */
+.portfolio-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+.portfolio-card { position: relative; border-radius: 12px; overflow: hidden; cursor: pointer; }
+.portfolio-card img { width: 100%; display: block; transition: transform 0.4s ease;}
+.portfolio-card:hover img { transform: scale(1.1); }
+.portfolio-layer { position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(0,0,0,0.1), var(--bg-dark)); display: flex; flex-direction: column; justify-content: flex-end; padding: 1.5rem; transform: translateY(100%); transition: transform 0.4s ease; }
+.portfolio-card:hover .portfolio-layer { transform: translateY(0); }
+.portfolio-layer h4 { font-size: 1.4rem; }
+.portfolio-layer p { font-size: 0.9rem; color: var(--text-secondary); }
+
+/* --- Contact Section --- */
+.contact-container { display: flex; gap: 4rem; }
+.contact-info { flex: 1; }
+.contact-info-item { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem; }
+.contact-info-item i { font-size: 1.8rem; color: var(--accent-orange); }
+.contact-info-item h4 { font-size: 1.2rem; }
+.contact-info-item p { color: var(--text-secondary); }
+.contact-form { flex: 1.5; }
+.form-group { margin-bottom: 1.5rem; }
+.form-group input, .form-group textarea { width: 100%; padding: 1rem; background-color: var(--bg-secondary); border: 2px solid transparent; border-radius: 8px; color: var(--text-white); font-family: var(--font-family); }
+.form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--accent-orange); }
+.form-group textarea { resize: vertical; min-height: 150px; }
+
+/* --- Footer --- */
+.footer { background-color: var(--bg-secondary); padding: 2rem 5%; text-align: center; }
+.footer p { color: var(--text-secondary); }
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 992px) {
+    #home { gap: 2rem; }
+    .hero-left h1 { font-size: 3rem; }
+    .hero-image-container { width: 300px; height: 300px; }
+    .about-container { flex-direction: column; }
+    .about-image img { width: 300px; height: 300px; }
+}
+
+@media (max-width: 768px) {
+    .header { padding: 1.2rem 5%; }
+    .menu-icon { display: block; }
+    .nav-links { position: absolute; top: 100%; left: -100%; width: 100%; background-color: var(--bg-secondary); flex-direction: column; align-items: center; padding: 2rem 0; gap: 1.5rem; transition: left 0.4s ease; border-top: 1px solid var(--accent-orange); }
+    .nav-links.active { left: 0; }
+    #home { flex-direction: column-reverse; text-align: center; gap: 3rem; padding-top: 6rem; }
+    .hero-left { align-items: center; display: flex; flex-direction: column; }
+    .hero-left h1 { font-size: 2.8rem; }
+    .hero-left h2 { font-size: 1.8rem; }
+    .social-icons, .hero-buttons { justify-content: center; }
+    .hero-image-container { width: 250px; height: 250px; }
+    .contact-container { flex-direction: column; }
+}
